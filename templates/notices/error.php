@@ -24,10 +24,12 @@ if ( ! $notices ) {
 }
 
 ?>
-<ul class="woocommerce-error" role="alert">
-	<?php foreach ( $notices as $notice ) : ?>
-		<li<?php echo wc_get_notice_data_attr( $notice ); ?>>
+
+<?php foreach ( $notices as $notice ) : ?>
+	<div class="uk-alert uk-alert-danger" uk-alert>
+		<a class="uk-alert-close" uk-close></a>
+		<p<?php echo wc_get_notice_data_attr( $notice ); ?>>
 			<?php echo wc_kses_notice( $notice['notice'] ); ?>
-		</li>
-	<?php endforeach; ?>
-</ul>
+		</p>
+	</div>
+<?php endforeach; ?>
