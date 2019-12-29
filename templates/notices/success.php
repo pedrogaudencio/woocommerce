@@ -26,9 +26,10 @@ if ( ! $messages ) {
 ?>
 
 <?php foreach ( $messages as $message ) : ?>
-	<div class="woocommerce-message" role="alert">
-		<?php
+	<div class="uk-alert uk-alert-success" uk-alert>
+		<a class="uk-alert-close" uk-close></a>
+		<p><?php
 			echo wc_kses_notice( $message );
-		?>
+		?></p>
 	</div>
 <?php endforeach; ?>

@@ -24,12 +24,12 @@ if ( ! $messages ) {
 }
 
 ?>
-<ul class="woocommerce-error" role="alert">
-	<?php foreach ( $messages as $message ) : ?>
-		<li>
-			<?php
-				echo wc_kses_notice( $message );
-			?>
-		</li>
-	<?php endforeach; ?>
-</ul>
+
+<?php foreach ( $messages as $message ) : ?>
+	<div class="uk-alert uk-alert-danger" uk-alert>
+		<a class="uk-alert-close" uk-close></a>
+		<p><?php
+			echo wc_kses_notice( $message );
+		?></p>
+	</div>
+<?php endforeach; ?>
